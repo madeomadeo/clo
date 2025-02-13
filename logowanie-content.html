@@ -1,0 +1,22 @@
+<h2>Logowanie</h2>
+<form id="login-form">
+  <label for="login-username">Nazwa użytkownika:</label><br>
+  <input type="text" id="login-username" name="username" required><br>
+  <label for="login-password">Hasło:</label><br>
+  <input type="password" id="login-password" name="password" required><br>
+  <button type="submit">Zaloguj się</button>
+</form>
+<div id="login-message"></div>
+<script>
+document.getElementById("login-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const username = document.getElementById("login-username").value;
+  const password = document.getElementById("login-password").value;
+  // Przykładowa walidacja (w praktyce należy wysłać dane na serwer)
+  if(username === "user" && password === "pass") {
+    document.getElementById("login-message").innerText = "Zalogowano pomyślnie!";
+  } else {
+    document.getElementById("login-message").innerText = "Błędna nazwa użytkownika lub hasło!";
+  }
+});
+</script>

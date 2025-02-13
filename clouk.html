@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cossacks League Online</title>
+  <style>
+    /* Import czcionki */
+    @font-face {
+      font-family: "Cinzel-Medium";
+      src: url("fonts/Cinzel-VariableFont_wght.ttf");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Styl całej strony */
+    body {
+      font-family: "Cinzel-Medium", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2 url("tlo.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Nagłówek strony */
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Banner */
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Cień banera */
+    }
+
+    /* Nawigacja */
+    nav {
+      background-color: #9b2226; /* Czerwony kolor inspirowany literą C */
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    /* Aktywny element w menu */
+    nav ul li a:hover {
+      color: #cf2a2a; /* Jaśniejszy czerwony kolor na hover */
+    }
+
+    /* Usunięcie podkreślenia w menu */
+    nav ul li a:focus, nav ul li a:active {
+      color: #cf2a2a; /* Jaśniejszy czerwony kolor */
+      text-decoration: none;
+    }
+
+    /* Przełącznik języka */
+    .language-switch {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    .language-switch a img {
+      width: 32px;
+      height: 24px;
+      margin-right: 10px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .language-switch a img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Social media */
+    .social-links {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+
+    .social-links a img {
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      transition: transform 0.2s ease-in-out, filter 0.3s ease;
+    }
+
+    .social-links a img:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2); /* Efekt podświetlenia */
+    }
+
+    /* Kontener z treścią */
+    .content {
+      max-width: 900px;
+      min-height: 650px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Układ logotypów */
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Styl przycisków (loga) */
+    .logo-container {
+      text-align: center;
+      padding: 15px;
+      border: 3px solid #444;
+      border-radius: 10px;
+      transition: 0.3s ease-in-out;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container:hover {
+      background-color: #e54b4b; /* Jaśniejszy czerwony kolor */
+      border-color: #e54b4b;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      transform: scale(1.05); /* Delikatne powiększenie */
+    }
+
+    .logo-container:active {
+      transform: scale(0.95); /* Efekt "ściśnięcia" */
+    }
+
+    .logo-container img {
+      width: 300px;
+      height: auto;
+      transition: 0.3s ease-in-out;
+      border: 5px solid transparent; /* Obramowanie wewnątrz przycisku */
+      padding: 5px;
+    }
+
+    .logo-caption {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Stopka */
+    footer {
+      background-color: #444;
+      color: #f2f2f2; /* Jaśniejszy tekst w stopce */
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 5px solid #9b2226; /* Czerwony kolor */
+    }
+
+    footer a {
+      color: #e54b4b; /* Jaśniejszy czerwony kolor */
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+    }
+
+    /* Responsywność */
+    @media (max-width: 768px) {
+      .logos {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .language-switch {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+
+      .social-links {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      footer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="banner">
+      <img src="baner.png" alt="Banner">
+    </div>
+    
+     <!-- Języki -->
+    <div class="language-switch">
+      <a href="cloen.html" aria-label="Angielski"><img src="uk.png" alt="English"></a>
+      <a href="clo.html" aria-label="Polski"><img src="poland.png" alt="Polski"></a>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Cossacks League Online</a></li>
+        <li><a href="#">Новини</a></li>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Правила турнірів</a></li>
+        <li><a href="#">Галерея</a></li>
+        <li><a href="#">Архів</a></li>
+        <li><a href="#">Контакт</a></li>
+      </ul>
+    </nav>
+
+    <!-- Social Media -->
+    <div class="social-links">
+      <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook"></a>
+      <a href="#" aria-label="Twitter"><img src="twitter.png" alt="Twitter"></a>
+      <a href="#" aria-label="YouTube"><img src="youtube.png" alt="YouTube"></a>
+      <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
+      <a href="#" aria-label="Discord"><img src="discord.png" alt="Discord"></a>
+    </div>
+  </header>
+
+  <div class="content">
+    <h2><b>Ласкаво просимо до Cossacks League Online!</b></h2>
+    <p>Оберіть лігу, яка вас цікавить:</p>
+    <div class="logos">
+      <div class="logo-container">
+        <a href="#"><img src="logo1.png" alt="Ліга 1"></a>
+        <div class="logo-caption">Найкраща 8 світу</div>
+      </div>
+      <div class="logo-container">
+        <a href="#"><img src="logo2.png" alt="Ліга 2"></a>
+        <div class="logo-caption">Ліга аматорів</div>
+      </div>
+      <div class="logo-container">
+        <a href="#"><img src="logo3.png" alt="Ліга 3"></a>
+        <div class="logo-caption">Ліга для всіх</div>
+      </div>
+      <div class="logo-container">
+        <a href="#"><img src="logo4.png" alt="Ліга 4"></a>
+        <div class="logo-caption">Кубок CLO</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Cossacks League Online. Усі права захищені.</p>
+    <p>Контакт: <a href="mailto:contact@cossacksleague.com">contact@cossacksleague.com</a></p>
+    <div class="footer-links">
+      <a href="#">Політика конфіденційності</a>
+      <a href="#">Правила</a>
+    </div>
+  </footer>
+</body>
+</html>
