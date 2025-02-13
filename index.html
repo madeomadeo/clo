@@ -41,29 +41,32 @@
     }
     nav ul {
       list-style-type: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* Elementy nie zawijają się */
+      justify-content: space-evenly; /* Równomierne rozmieszczenie */
     }
     nav ul li {
-      display: inline;
-      margin: 0 15px;
+      flex: 1;          /* Każdy element dzieli przestrzeń równomiernie */
+      text-align: center;
     }
     nav ul li a {
+      display: inline-block;
       color: #fff;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 14px;  /* Zmniejszony rozmiar czcionki */
       font-weight: bold;
       transition: color 0.3s ease;
+      white-space: nowrap; /* Zapobiega zawijaniu się tekstu */
+      padding: 8px;
     }
-    /* Aktywny link i hover */
+    /* Zmieniony kolor podświetlenia na złoty */
     nav ul li a.active,
     nav ul li a:hover,
     nav ul li a:focus,
     nav ul li a:active {
-      color: #cf2a2a;
+      color: #ffd700;
     }
     /* Przełącznik języka */
     .language-switch {
@@ -172,11 +175,8 @@
       margin: 0 10px;
     }
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-      }
-      nav ul li {
-        margin: 10px 0;
+      nav ul li a {
+        font-size: 12px;
       }
       .language-switch {
         top: 10px;
@@ -256,7 +256,7 @@
   <script>
     // Zachowujemy oryginalną zawartość strony głównej
     var defaultContent = document.getElementById("content-area").innerHTML;
-    // Ustawienie aktywnego linku w menu
+    // Funkcja ustawiająca aktywny link w menu
     function setActive(el) {
       var links = document.querySelectorAll("nav ul li a");
       links.forEach(function(link) {
@@ -279,7 +279,6 @@
           .catch(err => console.error('Błąd wczytywania ' + url + ': ', err));
       }
     }
-    // Na starcie strony pozostaje oryginalna zawartość
   </script>
 </body>
 </html>
