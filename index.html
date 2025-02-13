@@ -48,25 +48,24 @@
       justify-content: space-evenly; /* Równomierne rozmieszczenie */
     }
     nav ul li {
-      flex: 1;          /* Każdy element dzieli przestrzeń równomiernie */
+      flex: 1; /* Każdy element dzieli przestrzeń równomiernie */
       text-align: center;
     }
     nav ul li a {
       display: inline-block;
       color: #fff;
       text-decoration: none;
-      font-size: 14px;  /* Zmniejszony rozmiar czcionki */
+      font-size: 14px; /* Zmniejszony rozmiar czcionki */
       font-weight: bold;
       transition: color 0.3s ease;
       white-space: nowrap; /* Zapobiega zawijaniu się tekstu */
       padding: 8px;
     }
-    /* Zmieniony kolor podświetlenia na złoty */
     nav ul li a.active,
     nav ul li a:hover,
     nav ul li a:focus,
     nav ul li a:active {
-      color: #ffd700;
+      color: #ffd700; /* Złoty kolor podświetlenia */
     }
     /* Przełącznik języka */
     .language-switch {
@@ -111,6 +110,10 @@
       text-align: center;
       color: #333;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    /* Złote nagłówki w centralnym bloku */
+    .content h2 {
+      color: #ffd700;
     }
     /* Układ logotypów (oryginalna zawartość strony głównej) */
     .logos {
@@ -224,8 +227,8 @@
   </header>
   <div class="content" id="content-area">
     <!-- Oryginalna zawartość strony głównej -->
-    <h2><b>Witaj w Cossacks League Online!</b></h2>
-    <p>Wybierz ligę, która Cię interesuje:</p>
+    <h2><b>Witaj w Cossacks League Online!</h2>
+    <p>Wybierz ligę, która Cię interesuje:</b></p>
     <div class="logos">
       <div class="logo-container">
         <a href="#"><img src="logos/logo1.png" alt="Liga 1"></a>
