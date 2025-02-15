@@ -21,7 +21,7 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
     .table-section table {
-      width: 95%;
+      width: calc(100% - 20px); /* Zmniejszona szerokość, aby uniknąć rozjeżdżania */
       margin: 0 auto;
       border-collapse: collapse;
       font-size: 14px;
@@ -46,9 +46,26 @@
     .gold { background-color: #ffd700; color: black; }
     .silver { background-color: #c0c0c0; color: black; }
     .bronze { background-color: #8b5a2b; color: white; }
-    .fourth { background-color: steelblue; color: white; } /* Zmieniony kolor dla 4. miejsca */
+    .fourth { background-color: steelblue; color: white; }
     .seventh { background-color: #e75480; color: white; }
     .eighth { background-color: #b22222; color: white; }
+    .legend h3 {
+      font-size: 18px;
+      border-bottom: 2px solid #b8860b;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +101,35 @@
       <tr class="eighth"><td>8</td><td>Gracz 8</td><td>800</td><td>0</td><td>1</td><td>0</td><td>2</td><td>65</td><td>35</td><td>30</td><td>55%</td></tr>
     </tbody>
   </table>
+</div>
+
+<!-- Legenda -->
+<div class="legend">
+  <h3>Legenda:</h3>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #ffd700;"></div>
+    <span>1. miejsce – Złoto + Turniej finałowy</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #c0c0c0;"></div>
+    <span>2. miejsce – Srebro + Turniej finałowy</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #8b5a2b;"></div>
+    <span>3. miejsce – Brąz + Turniej finałowy</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: steelblue;"></div>
+    <span>4. miejsce – Turniej finałowy</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #e75480;"></div>
+    <span>7. miejsce – Baraż o utrzymanie</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-color" style="background-color: #b22222;"></div>
+    <span>8. miejsce – Możliwy baraż o utrzymanie/spadek</span>
+  </div>
 </div>
 
 </body>
