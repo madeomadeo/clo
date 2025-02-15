@@ -1,2 +1,44 @@
-<h2>Puchar CLO</h2>
-<p>Puchar CLO to wyjątkowe wydarzenie dla wszystkich fanów Cossacks League Online!</p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drabinka Turniejowa (Interaktywna)</title>
+  <style>
+    .bracket {
+      text-align: center;
+      margin: 20px;
+    }
+    .round {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e54b4b;
+    }
+  </style>
+</head>
+<body>
+  <h2>Puchar CLO – Drabinka Interaktywna</h2>
+  <div class="bracket">
+    <div class="round">
+      <button onclick="advance('Gracz 1')">Gracz 1</button> vs <button onclick="advance('Gracz 2')">Gracz 2</button>
+    </div>
+    <div id="nextRound"></div>
+  </div>
+
+  <script>
+    function advance(player) {
+      document.getElementById('nextRound').innerHTML = player + ' awansuje do następnej rundy!';
+    }
+  </script>
+</body>
+</html>
