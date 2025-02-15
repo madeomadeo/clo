@@ -3,42 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drabinka Turniejowa (Interaktywna)</title>
+  <title>Drabinka Turniejowa (Nowoczesna)</title>
   <style>
-    .bracket {
-      text-align: center;
-      margin: 20px;
+    .bracket-modern {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
     }
     .round {
-      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-    button {
+    .player {
       padding: 10px;
-      margin: 5px;
-      background-color: #444;
+      background: linear-gradient(45deg, #ffd700, #e54b4b);
       color: white;
-      border: none;
       border-radius: 5px;
-      cursor: pointer;
+      transition: transform 0.3s ease;
+      text-align: center;
+      font-weight: bold;
     }
-    button:hover {
-      background-color: #e54b4b;
+    .player:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <h2>Puchar CLO – Drabinka Interaktywna</h2>
-  <div class="bracket">
+  <h2>Puchar CLO – Drabinka Turniejowa (Nowoczesna)</h2>
+  <div class="bracket-modern">
     <div class="round">
-      <button onclick="advance('Gracz 1')">Gracz 1</button> vs <button onclick="advance('Gracz 2')">Gracz 2</button>
+      <div class="player">Gracz 1</div>
+      <div class="player">Gracz 2</div>
+      <div class="player">Gracz 3</div>
+      <div class="player">Gracz 4</div>
     </div>
-    <div id="nextRound"></div>
+    <div class="round">
+      <div class="player">Zwycięzca 1</div>
+      <div class="player">Zwycięzca 2</div>
+    </div>
+    <div class="round">
+      <div class="player">Zwycięzca 3</div>
+    </div>
   </div>
-
-  <script>
-    function advance(player) {
-      document.getElementById('nextRound').innerHTML = player + ' awansuje do następnej rundy!';
-    }
-  </script>
 </body>
 </html>
