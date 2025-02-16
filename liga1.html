@@ -5,10 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Najlepsza 8 świata</title>
   <style>
+    @font-face {
+      font-family: 'Cinzel-Medium';
+      src: url('fonts/Cinzel-VariableFont_wght.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
       font-family: 'Cinzel-Medium', serif;
       background-color: #f4f0e4;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px 0;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #444;
+      color: #f2f2f2;
+      border-top: 5px solid #9b2226;
+    }
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       text-align: center;
     }
     .table-section, .legend {
@@ -70,9 +104,15 @@
 </head>
 <body>
 
-<main>
-  <h2 style="text-align: center; color: #ffd700;">Najlepsza 8 świata</h2>
-  <p style="text-align: center;">Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
+<header>
+  <div class="banner">
+    <img src="logos/baner.png" alt="Banner">
+  </div>
+</header>
+
+<div class="content">
+  <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
+  <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
   <div class="table-section">
     <table>
@@ -128,4 +168,14 @@
     </div>
     <div class="legend-item">
       <div class="legend-color" style="background-color: #b22222;"></div>
-      <span>8. miejsce – Możliwy baraż o utrzymanie/spadek</
+      <span>8. miejsce – Możliwy baraż o utrzymanie/spadek</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Cossacks League Online. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+</body>
+</html>
