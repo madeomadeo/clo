@@ -30,11 +30,34 @@
       color: #f2f2f2;
       border-top: 5px solid #9b2226;
     }
-    .banner img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    nav {
+      width: 100vw;
+      background-color: #9b2226;
+      padding: 10px 0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #ffd700;
+      color: #9b2226;
+      border-radius: 5px;
     }
     .content {
       max-width: 900px;
@@ -104,6 +127,22 @@
 </head>
 <body>
 
+<header>
+  <div class="banner">
+    <img src="logos/baner.png" alt="Banner">
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Strona Główna</a></li>
+    <li><a href="#">Najlepsza 8 świata</a></li>
+    <li><a href="#">Liga Amatorów</a></li>
+    <li><a href="#">Liga dla Każdego</a></li>
+    <li><a href="#">Puchar CLO</a></li>
+  </ul>
+</nav>
+
 <div class="content">
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
@@ -166,6 +205,10 @@
     </div>
   </div>
 </div>
+
+<footer>
+  <p>&copy; 2025 Cossacks League Online. Wszelkie prawa zastrzeżone.</p>
+</footer>
 
 </body>
 </html>
