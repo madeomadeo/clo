@@ -62,7 +62,7 @@
       background: linear-gradient(45deg, #e54b4b, #ffd700);
       transform: scale(1.05);
     }
-    nav {
+       nav {
       background-color: #9b2226;
       padding: 10px 0;
       text-align: center;
@@ -88,10 +88,12 @@
       font-size: 14px;
       font-weight: bold;
       padding: 8px 16px;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, background-color 0.3s ease;
     }
-    nav ul li a:hover {
-      color: #ffd700;
+    nav ul li a:hover, nav ul li a.active {
+      background-color: #ffd700;
+      color: black;
+      border-radius: 5px;
     }
     .dropdown {
       display: none;
@@ -217,6 +219,8 @@
         <li><a href="#" onclick="loadContent('aktualnosci-content.html', this)">Aktualności</a></li>
         <li><a href="#" onclick="loadContent('o_nas-content.html', this)">O Nas</a></li>
         <li><a href="#" onclick="loadContent('regulamin-content.html', this)">Regulamin CLO</a></li>
+        <li><a href="#" onclick="loadContent('media-content.html', this)">Media</a></li>
+        <li><a href="#" onclick="loadContent('pomoc-content.html', this)">Pomoc</a></li>
         <li><a href="#" onclick="loadContent('kontakt-content.html', this)">Kontakt</a></li>
       </ul>
     </nav>
