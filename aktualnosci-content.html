@@ -34,43 +34,14 @@
       margin: 20px 0;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: left;
-      position: relative;
     }
     .news-item h3 {
       color: #9b2226;
       margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
-    .news-item h3::before {
-      content: url('logos/megaphone.png'); /* Ikona przed nagłówkiem */
-      margin-right: 10px;
-      width: 24px;
-      height: 24px;
     }
     .news-item p {
       font-size: 14px;
       line-height: 1.6;
-      display: none;
-      margin-top: 10px;
-    }
-    .news-item p.preview {
-      display: block;
-    }
-    .read-more {
-      background-color: #9b2226;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-      margin-top: 10px;
-    }
-    .read-more:hover {
-      background-color: #ffd700;
-      color: #333;
     }
   </style>
 </head>
@@ -79,41 +50,22 @@
 <div class="content">
   <h2>Aktualności</h2>
   
-  <!-- Przykładowe bloki aktualności z efektami -->
+  <!-- Przykładowe bloki aktualności -->
   <div class="news-item">
     <h3>Turniej finałowy już wkrótce!</h3>
-    <p class="preview">Zapraszamy wszystkich na wielki finał Cossacks League Online, który odbędzie się już za tydzień...</p>
-    <p>Wielki finał to wydarzenie, które zgromadzi najlepszych graczy z całego świata. Będzie to doskonała okazja, aby zobaczyć emocjonujące pojedynki i kibicować swoim ulubionym zawodnikom!</p>
-    <button class="read-more" onclick="toggleText(this)">Czytaj więcej</button>
+    <p>Zapraszamy wszystkich na wielki finał Cossacks League Online, który odbędzie się już za tydzień. Czekają na Was emocjonujące pojedynki i niespodzianki!</p>
   </div>
 
   <div class="news-item">
     <h3>Aktualizacja regulaminu turnieju</h3>
-    <p class="preview">Przypominamy wszystkim uczestnikom, że został zaktualizowany regulamin turnieju...</p>
-    <p>Zmiany dotyczą zasad kwalifikacji oraz sposobu zgłaszania wyników meczów. Prosimy wszystkich uczestników o zapoznanie się z nowym regulaminem na naszej stronie internetowej.</p>
-    <button class="read-more" onclick="toggleText(this)">Czytaj więcej</button>
+    <p>Przypominamy wszystkim uczestnikom, że został zaktualizowany regulamin turnieju. Prosimy o zapoznanie się z najnowszymi zasadami przed rozpoczęciem rozgrywek.</p>
   </div>
 
   <div class="news-item">
     <h3>Nowe funkcje na stronie!</h3>
-    <p class="preview">Wprowadziliśmy kilka nowości na stronie, w tym bardziej rozbudowany system statystyk graczy...</p>
-    <p>Dzięki nowym funkcjom użytkownicy mogą teraz śledzić swoje wyniki, zgłaszać mecze bezpośrednio przez portal oraz korzystać z nowego systemu powiadomień.</p>
-    <button class="read-more" onclick="toggleText(this)">Czytaj więcej</button>
+    <p>Wprowadziliśmy kilka nowości na stronie, w tym bardziej rozbudowany system statystyk graczy oraz możliwość zgłaszania wyników meczów bezpośrednio przez portal.</p>
   </div>
 </div>
-
-<script>
-  function toggleText(button) {
-    const fullText = button.previousElementSibling;
-    if (fullText.classList.contains('preview')) {
-      fullText.classList.remove('preview');
-      button.innerText = 'Zwiń';
-    } else {
-      fullText.classList.add('preview');
-      button.innerText = 'Czytaj więcej';
-    }
-  }
-</script>
 
 </body>
 </html>
