@@ -45,6 +45,27 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       text-align: center;
     }
+    .round-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .round-buttons button {
+      background-color: #d4af37;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .round-buttons button:hover {
+      background-color: #b8860b;
+      color: white;
+    }
     .table-section, .legend {
       width: 90%;
       margin: 20px auto;
@@ -69,12 +90,6 @@
       color: white;
       text-transform: uppercase;
       letter-spacing: 1px;
-    }
-    .table-section th.small {
-      width: 5%;
-    }
-    .table-section th.medium {
-      width: 10%;
     }
     .gold { background-color: #ffd700; color: black; }
     .silver { background-color: #c0c0c0; color: black; }
@@ -108,7 +123,19 @@
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
-  <div class="table-section">
+  <!-- Przyciski R1-R8 -->
+  <div class="round-buttons">
+    <button onclick="selectRound('R1')">R1</button>
+    <button onclick="selectRound('R2')">R2</button>
+    <button onclick="selectRound('R3')">R3</button>
+    <button onclick="selectRound('R4')">R4</button>
+    <button onclick="selectRound('R5')">R5</button>
+    <button onclick="selectRound('R6')">R6</button>
+    <button onclick="selectRound('R7')">R7</button>
+    <button onclick="selectRound('R8')">R8</button>
+  </div>
+
+   <div class="table-section">
     <table>
       <thead>
         <tr>
@@ -166,6 +193,12 @@
     </div>
   </div>
 </div>
+
+<script>
+  function selectRound(round) {
+    alert("Wybrana runda: " + round);
+  }
+</script>
 
 </body>
 </html>
