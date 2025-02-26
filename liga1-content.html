@@ -138,7 +138,29 @@
     <button onclick="loadRound('R7')">R7</button>
     <button onclick="loadRound('R8')">R8</button>
   </div>
+
+ 
 </div>
+
+<script>
+  function loadRound(round) {
+    // Definicja treści dla każdej rundy
+    const roundData = {
+      R1: "<h3>Runda 1 - Wyniki</h3><p>Gracz 1 vs Gracz 2: 2-1</p><p>Gracz 3 vs Gracz 4: 1-2</p>",
+      R2: "<h3>Runda 2 - Wyniki</h3><p>Gracz 5 vs Gracz 6: 2-0</p><p>Gracz 7 vs Gracz 8: 1-2</p>",
+      R3: "<h3>Runda 3 - Wyniki</h3><p>Gracz 1 vs Gracz 3: 2-0</p><p>Gracz 2 vs Gracz 4: 1-2</p>",
+      R4: "<h3>Runda 4 - Wyniki</h3><p>Gracz 5 vs Gracz 7: 2-1</p><p>Gracz 6 vs Gracz 8: 0-2</p>",
+      R5: "<h3>Runda 5 - Wyniki</h3><p>Gracz 1 vs Gracz 5: 2-0</p><p>Gracz 2 vs Gracz 6: 1-2</p>",
+      R6: "<h3>Runda 6 - Wyniki</h3><p>Gracz 3 vs Gracz 7: 2-1</p><p>Gracz 4 vs Gracz 8: 0-2</p>",
+      R7: "<h3>Runda 7 - Wyniki</h3><p>Gracz 1 vs Gracz 6: 2-1</p><p>Gracz 2 vs Gracz 5: 0-2</p>",
+      R8: "<h3>Runda 8 - Wyniki</h3><p>Gracz 3 vs Gracz 8: 1-2</p><p>Gracz 4 vs Gracz 7: 2-0</p>",
+    };
+
+    // Zmiana zawartości na podstawie wybranej rundy
+    document.getElementById("round-content").innerHTML = roundData[round] || "<p>Brak danych dla tej rundy.</p>";
+  }
+</script>
+
 
   
 
