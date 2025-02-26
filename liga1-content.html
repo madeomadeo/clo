@@ -123,19 +123,27 @@
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
+<!-- Miejsce na dynamiczną zawartość -->
+  <div id="round-content" class="table-section">
+    <p>Wybierz rundę, aby zobaczyć szczegóły.</p>
+  
   <!-- Przyciski R1-R8 -->
   <div class="round-buttons">
-    <button onclick="selectRound('R1')">R1</button>
-    <button onclick="selectRound('R2')">R2</button>
-    <button onclick="selectRound('R3')">R3</button>
-    <button onclick="selectRound('R4')">R4</button>
-    <button onclick="selectRound('R5')">R5</button>
-    <button onclick="selectRound('R6')">R6</button>
-    <button onclick="selectRound('R7')">R7</button>
-    <button onclick="selectRound('R8')">R8</button>
+    <button onclick="loadRound('R1')">R1</button>
+    <button onclick="loadRound('R2')">R2</button>
+    <button onclick="loadRound('R3')">R3</button>
+    <button onclick="loadRound('R4')">R4</button>
+    <button onclick="loadRound('R5')">R5</button>
+    <button onclick="loadRound('R6')">R6</button>
+    <button onclick="loadRound('R7')">R7</button>
+    <button onclick="loadRound('R8')">R8</button>
   </div>
+</div>
+
+  
 
    <div class="table-section">
+<p>Tabela ligi Najlepszej 8 Swiata</p>
     <table>
       <thead>
         <tr>
@@ -165,6 +173,7 @@
     </table>
   </div>
 
+ 
   <div class="legend">
     <h3>Legenda:</h3>
     <div class="legend-item">
