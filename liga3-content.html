@@ -1,2 +1,120 @@
-<h2>Liga dla każdego</h2>
-<p>W Lidze dla każdego znajdziecie zróżnicowane rozgrywki dla graczy na każdym poziomie.</p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Najlepsza 8 świata</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f0e4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px 0;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #444;
+      color: #f2f2f2;
+    }
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .round-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .round-buttons button {
+      background-color: #d4af37;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .round-buttons button:hover {
+      background-color: #b8860b;
+      color: white;
+    }
+    .round-content {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff8dc;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Najlepsza 8 świata</h1>
+  </header>
+
+  <div class="content">
+    <h2>Wybierz rundę, aby zobaczyć szczegóły:</h2>
+
+    <div class="round-buttons">
+      <button onclick="loadRound('R1')">R1</button>
+      <button onclick="loadRound('R2')">R2</button>
+      <button onclick="loadRound('R3')">R3</button>
+      <button onclick="loadRound('R4')">R4</button>
+      <button onclick="loadRound('R5')">R5</button>
+      <button onclick="loadRound('R6')">R6</button>
+      <button onclick="loadRound('R7')">R7</button>
+      <button onclick="loadRound('R8')">R8</button>
+    </div>
+
+    <div id="round-content" class="round-content">
+      <p>Wybierz rundę, aby zobaczyć zawartość.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Najlepsza 8 świata</p>
+  </footer>
+
+  <script>
+    function loadRound(round) {
+      // Wyczyść obecną zawartość
+      const roundContent = document.getElementById('round-content');
+      roundContent.innerHTML = "Ładowanie zawartości dla " + round + "...";
+
+      // Załaduj plik HTML z odpowiednią rundą
+      fetch(`https://madeomadeo.github.io/clo/rounds/${round}.html`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Nie udało się załadować danych');
+          }
+          return response.text();
+        })
+        .then(data => {
+          roundContent.innerHTML = data;
+          roundContent.style.display = "block"; // Pokaż zawartość
+        })
+        .catch(error => {
+          roundContent.innerHTML = "<p>Nie udało się załadować danych.</p>";
+        });
+    }
+  </script>
+
+</body>
+</html>
