@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Najlepsza 8 świata</title>
   <style>
+    /* Twoje style CSS */
     @font-face {
       font-family: 'Cinzel-Medium';
       src: url('fonts/Cinzel-VariableFont_wght.ttf');
@@ -123,49 +124,25 @@
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
-<!-- Miejsce na dynamiczną zawartość -->
+  <!-- Miejsce na dynamiczną zawartość -->
   <div id="round-content" class="table-section">
     <p>Wybierz rundę, aby zobaczyć szczegóły.</p>
-  
-  <!-- Przyciski R1-R8 -->
-  <div class="round-buttons">
-   <button onclick="loadRound('R1')">R1</button>
-<button onclick="loadRound('R2')">R2</button>
-<button onclick="loadRound('R3')">R3</button>
-<button onclick="loadRound('R4')">R4</button>
-<button onclick="loadRound('R5')">R5</button>
-<button onclick="loadRound('R6')">R6</button>
-<button onclick="loadRound('R7')">R7</button>
-<button onclick="loadRound('R8')">R8</button>
   </div>
 
- 
-</div>
+  <!-- Przyciski R1-R8 -->
+  <div class="round-buttons">
+    <button onclick="loadRound('R1')">R1</button>
+    <button onclick="loadRound('R2')">R2</button>
+    <button onclick="loadRound('R3')">R3</button>
+    <button onclick="loadRound('R4')">R4</button>
+    <button onclick="loadRound('R5')">R5</button>
+    <button onclick="loadRound('R6')">R6</button>
+    <button onclick="loadRound('R7')">R7</button>
+    <button onclick="loadRound('R8')">R8</button>
+  </div>
 
-<script>
-function loadRound(round) {
-    fetch(`https://madeomadeo.github.io/clo/rounds/${round}.html`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Nie udało się załadować danych');
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById("round-content").innerHTML = data;
-        })
-        .catch(error => {
-            document.getElementById("round-content").innerHTML = "<p>Nie udało się załadować danych.</p>";
-        });
-}
-
-</script>
-
-
-  
-
-   <div class="table-section">
-<p>Tabela ligi Najlepszej 8 Swiata</p>
+  <div class="table-section">
+    <p>Tabela ligi Najlepszej 8 Swiata</p>
     <table>
       <thead>
         <tr>
@@ -195,7 +172,6 @@ function loadRound(round) {
     </table>
   </div>
 
- 
   <div class="legend">
     <h3>Legenda:</h3>
     <div class="legend-item">
@@ -226,9 +202,21 @@ function loadRound(round) {
 </div>
 
 <script>
-  function selectRound(round) {
-    alert("Wybrana runda: " + round);
-  }
+  function loadRound(round) {
+    fetch(`https://madeomadeo.github.io/clo/rounds/${round}.html`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Nie udało się załadować danych');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("round-content").innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById("round-content").innerHTML = "<p>Nie udało się załadować danych.</p>";
+        });
+}
 </script>
 
 </body>
