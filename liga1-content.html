@@ -143,16 +143,19 @@
 </div>
 
 <script>
-function loadRound(round) {
-    fetch('rounds/' + round + '.html')
-    .then(response => response.text())
+fetch('https://madeomadeo.github.io/clo/rounds/' + round + '.html')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Nie udało się załadować danych');
+        }
+        return response.text();
+    })
     .then(data => {
         document.getElementById("round-content").innerHTML = data;
     })
     .catch(error => {
         document.getElementById("round-content").innerHTML = "<p>Nie udało się załadować danych.</p>";
     });
-}
 
 </script>
 
