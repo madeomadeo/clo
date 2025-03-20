@@ -151,8 +151,7 @@
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
-  <!-- Lista przycisków dla R1 do R8 w poziomie -->
-  <ul class="round-links">
+<ul class="round-links">
     <li><a href="#" onclick="loadContent('R1.html', this)">R1</a></li>
     <li><a href="#" onclick="loadContent('R2.html', this)">R2</a></li>
     <li><a href="#" onclick="loadContent('R3.html', this)">R3</a></li>
@@ -161,7 +160,8 @@
     <li><a href="#" onclick="loadContent('R6.html', this)">R6</a></li>
     <li><a href="#" onclick="loadContent('R7.html', this)">R7</a></li>
     <li><a href="#" onclick="loadContent('R8.html', this)">R8</a></li>
-  </ul>
+</ul>
+
 
   <div id="dynamic-content">
     <!-- Tutaj będzie dynamicznie ładowana zawartość -->
@@ -196,46 +196,63 @@
 
 <!-- Reszta kodu tabeli i legendy -->
 <div class="table-section">
-  <p>Tabela ligi Najlepszej 8 Swiata</p>
-  <table>
-    <thead>
-      <tr>
-        <th>Pozycja</th>
-        <th>Gracz</th>
-        <th>Punkty</th>
-        <th class="small">1st</th>
-        <th class="small">2nd</th>
-        <th class="small">1/2</th>
-        <th class="small">1/4</th>
-        <th class="medium">Ilość meczów</th>
-        <th class="medium">Wygrane</th>
-        <th class="medium">Przegrane</th>
-        <th class="medium">Win Rate (%)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="gold"><td>1</td><td>Gracz 1</td><td>1200</td><td>5</td><td>1</td><td>2</td><td>4</td><td>100</td><td>75</td><td>25</td><td>75%</td></tr>
-      <tr class="silver"><td>2</td><td>Gracz 2</td><td>1100</td><td>4</td><td>2</td><td>1</td><td>3</td><td>95</td><td>66</td><td>29</td><td>70%</td></tr>
-      <tr class="bronze"><td>3</td><td>Gracz 3</td><td>1050</td><td>3</td><td>3</td><td>1</td><td>2</td><td>90</td><td>65</td><td>25</td><td>72%</td></tr>
-      <tr class="fourth"><td>4</td><td>Gracz 4</td><td>1000</td><td>2</td><td>4</td><td>0</td><td>1</td><td>85</td><td>60</td><td>25</td><td>68%</td></tr>
-      <tr><td>5</td><td>Gracz 5</td><td>950</td><td>2</td><td>2</td><td>2</td><td>0</td><td>80</td><td>55</td><td>25</td><td>65%</td></tr>
-      <tr><td>6</td><td>Gracz 6</td><td>900</td><td>1</td><td>3</td><td>1</td><td>1</td><td>75</td><td>50</td><td>25</td><td>60%</td></tr>
-      <tr><td>7</td><td>Gracz 7</td><td>850</td><td>1</td><td>2</td><td>3</td><td>0</td><td>70</td><td>45</td><td>25</td><td>55%</td></tr>
-      <tr><td>8</td><td>Gracz 8</td><td>800</td><td>0</td><td>1</td><td>2</td><td>1</td><td>65</td><td>40</td><td>25</td><td>50%</td></tr>
-    </tbody>
-  </table>
-</div>
+    <p>Tabela ligi Najlepszej 8 Swiata</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Pozycja</th>
+          <th>Gracz</th>
+          <th>Punkty</th>
+          <th class="small">1st</th>
+          <th class="small">2nd</th>
+          <th class="small">1/2</th>
+          <th class="small">1/4</th>
+          <th class="medium">Ilość meczów</th>
+          <th class="medium">Wygrane</th>
+          <th class="medium">Przegrane</th>
+          <th class="medium">Win Rate (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="gold"><td>1</td><td>Gracz 1</td><td>1200</td><td>5</td><td>1</td><td>2</td><td>4</td><td>100</td><td>75</td><td>25</td><td>75%</td></tr>
+        <tr class="silver"><td>2</td><td>Gracz 2</td><td>1100</td><td>4</td><td>2</td><td>1</td><td>3</td><td>95</td><td>66</td><td>29</td><td>70%</td></tr>
+        <tr class="bronze"><td>3</td><td>Gracz 3</td><td>1050</td><td>3</td><td>3</td><td>1</td><td>2</td><td>90</td><td>65</td><td>25</td><td>72%</td></tr>
+        <tr class="fourth"><td>4</td><td>Gracz 4</td><td>1000</td><td>2</td><td>4</td><td>0</td><td>1</td><td>85</td><td>60</td><td>25</td><td>68%</td></tr>
+        <tr><td>5</td><td>Gracz 5</td><td>950</td><td>2</td><td>2</td><td>2</td><td>0</td><td>80</td><td>55</td><td>25</td><td>65%</td></tr>
+        <tr><td>6</td><td>Gracz 6</td><td>900</td><td>1</td><td>3</td><td>1</td><td>1</td><td>75</td><td>50</td><td>25</td><td>60%</td></tr>
+        <tr class="seventh"><td>7</td><td>Gracz 7</td><td>850</td><td>1</td><td>0</td><td>3</td><td>0</td><td>70</td><td>40</td><td>30</td><td>58%</td></tr>
+        <tr class="eighth"><td>8</td><td>Gracz 8</td><td>800</td><td>0</td><td>1</td><td>0</td><td>2</td><td>65</td><td>35</td><td>30</td><td>55%</td></tr>
+      </tbody>
+    </table>
+  </div>
 
 <!-- Legenda -->
 <div class="legend">
-  <h3>Legenda:</h3>
-  <div class="legend-item"><div class="legend-color" style="background-color: #ffd700;"></div><span>Złoto - 1. miejsce</span></div>
-  <div class="legend-item"><div class="legend-color" style="background-color: #c0c0c0;"></div><span>Srebro - 2. miejsce</span></div>
-  <div class="legend-item"><div class="legend-color" style="background-color: #8b5a2b;"></div><span>Brąz - 3. miejsce</span></div>
-  <div class="legend-item"><div class="legend-color" style="background-color: steelblue;"></div><span>4. miejsce</span></div>
-  <div class="legend-item"><div class="legend-color" style="background-color: #e75480;"></div><span>7. miejsce</span></div>
-  <div class="legend-item"><div class="legend-color" style="background-color: #b22222;"></div><span>8. miejsce</span></div>
-</div>
+    <h3>Legenda:</h3>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #ffd700;"></div>
+      <span>1. miejsce – Złoto + Turniej finałowy</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #c0c0c0;"></div>
+      <span>2. miejsce – Srebro + Turniej finałowy</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #8b5a2b;"></div>
+      <span>3. miejsce – Brąz + Turniej finałowy</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: steelblue;"></div>
+      <span>4. miejsce – Turniej finałowy</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #e75480;"></div>
+      <span>7. miejsce – Baraż o utrzymanie</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #b22222;"></div>
+      <span>8. miejsce – Możliwy baraż o utrzymanie/spadek</span>
+    </div>
 
 </body>
 </html>
