@@ -144,7 +144,7 @@
 
 <script>
 function loadRound(round) {
-    fetch('https://madeomadeo.github.io/clo/rounds/' + round + '.html')
+    fetch(`https://madeomadeo.github.io/clo/rounds/${round}.html`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Nie udało się załadować danych');
@@ -158,6 +158,7 @@ function loadRound(round) {
             document.getElementById("round-content").innerHTML = "<p>Nie udało się załadować danych.</p>";
         });
 }
+
 </script>
 
 
