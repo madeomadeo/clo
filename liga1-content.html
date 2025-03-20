@@ -191,13 +191,20 @@
 </div>
 
 <script>
-  document.getElementById('loadR1Button').addEventListener('click', function() {
-    fetch('R1.html')
-      .then(response => response.text())
+  // Obsługuje kliknięcie przycisku
+  document.getElementById("loadR1Button").addEventListener("click", function() {
+    console.log("Przycisk kliknięty, ładuję zawartość R1.html...");
+
+    fetch('R1.html') // Pobieranie zawartości pliku R1.html
+      .then(response => response.text()) // Odczytanie odpowiedzi jako tekst
       .then(data => {
+        // Zastąpienie zawartości centralnego bloku
         document.getElementById('dynamic-content').innerHTML = data;
+        console.log("Zawartość załadowana!");
       })
-      .catch(error => console.error('Error loading R1.html:', error));
+      .catch(error => {
+        console.error("Błąd ładowania pliku:", error);
+      });
   });
 </script>
 
