@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Najlepsza 8 świata</title>
   <style>
-    /* Twoje style CSS */
     body {
       font-family: 'Cinzel-Medium', serif;
       background-color: #f4f0e4;
@@ -57,6 +56,7 @@
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
+  <!-- Przycisk do wczytania R1 -->
   <div class="round-buttons">
     <button id="loadR1Button">Przejdź do R1</button>
   </div>
@@ -67,24 +67,29 @@
 </div>
 
 <script>
-  // Przycisk "Przejdź do R1"
+  // Obsługa kliknięcia w przycisk "R1"
   document.getElementById("loadR1Button").addEventListener("click", function() {
-    // Wczytywanie pliku R1.html
-    fetch('R1.html') // Sprawdź ścieżkę do pliku R1.html
+    loadContent('R1.html'); // Wczytuje zawartość z pliku R1.html
+  });
+
+  // Funkcja wczytująca zawartość z pliku HTML i wstawiająca ją do #dynamic-content
+  function loadContent(page) {
+    fetch(page)
       .then(response => {
         if (response.ok) {
-          return response.text(); // Zwraca zawartość HTML w formie tekstu
+          return response.text();
         } else {
-          throw new Error('Plik R1.html nie został znaleziony');
+          throw new Error('Błąd ładowania pliku: ' + page);
         }
       })
       .then(data => {
-        document.getElementById('dynamic-content').innerHTML = data; // Wstawienie zawartości do dynamic-content
+        document.getElementById('dynamic-content').innerHTML = data;
       })
       .catch(error => {
-        console.error('Błąd ładowania pliku:', error);
+        console.error(error);
+        document.getElementById('dynamic-content').innerHTML = '<p>Wystąpił błąd podczas ładowania zawartości.</p>';
       });
-  });
+  }
 </script>
 
 </body>
