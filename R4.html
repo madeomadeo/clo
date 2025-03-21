@@ -1,15 +1,144 @@
-<h3>Runda 1 - Wyniki</h3>
-<p>Gracz 1 vs Gracz 2: 2-1</p>
-<p>Gracz 3 vs Gracz 4: 1-2</p>
-<h3>Runda 1 - Wyniki</h3>
-<p>Gracz 1 vs Gracz 2: 2-1</p>
-<p>Gracz 3 vs Gracz 4: 1-2</p>
-<h3>Runda 1 - Wyniki</h3>
-<p>Gracz 1 vs Gracz 2: 2-1</p>
-<p>Gracz 3 vs Gracz 4: 1-2</p>
-<h3>Runda 1 - Wyniki</h3>
-<p>Gracz 1 vs Gracz 2: 2-1</p>
-<p>Gracz 3 vs Gracz 4: 1-2</p>
-<h3>Runda 1 - Wyniki</h3>
-<p>Gracz 1 vs Gracz 2: 2-1</p>
-<p>Gracz 3 vs Gracz 4: 1-2</p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<center>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drabinka Turniejowa - Runda 4</title>
+  <style>
+  /* Załadowanie czcionki z pliku */
+  @font-face {
+    font-family: "Cinzel-Medium";
+    src: url("fonts/Cinzel-VariableFont_wght.ttf") format("truetype");
+  }
+
+  /* Styl ogólny dla całej strony */
+  body {
+    font-family: "Cinzel-Medium", serif; /* Ustawienie czcionki strony */
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  th {
+    background-color: #9b2226;
+    color: white;
+  }
+
+  /* Styl przycisku */
+  .back-button {
+    background-color: #9b2226; /* Czerwony kolor przycisku */
+    color: white; /* Kolor tekstu */
+    font-size: 16px; /* Rozmiar czcionki */
+    padding: 12px 20px; /* Wewnętrzna przestrzeń */
+    border: none; /* Bez obramowania */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+    text-align: center; /* Wyrównanie tekstu */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animacje zmiany tła i przekształcenia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień wokół przycisku */
+    font-family: "Cinzel-Medium", serif; /* Czcionka przycisku */
+  }
+
+  .back-button:hover {
+    background-color: #7a1d22; /* Ciemniejszy odcień przy najechaniu */
+    transform: translateY(-3px); /* Przemieszczenie przycisku w górę podczas najechania */
+  }
+
+  .back-button:active {
+    background-color: #62121c; /* Jeszcze ciemniejszy odcień przy kliknięciu */
+    transform: translateY(1px); /* Przemieszczenie przycisku w dół przy kliknięciu */
+  }
+
+  .back-button:focus {
+    outline: none; /* Usunięcie obramowania fokusu */
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.6); /* Złoty obrys przy fokusie */
+  }
+
+  h2 {
+    color: #FFD700; /* Złoty kolor */
+    text-align: center; /* Wyrównanie tekstu na środku */
+    font-size: 24px; /* Rozmiar czcionki */
+    font-weight: bold; /* Pogrubienie tekstu */
+    margin-top: 20px; /* Odstęp od góry */
+    border-bottom: 2px solid #b8860b;
+  }
+
+  .news-item {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff8dc;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+
+  .news-item h3 {
+    color: #d4af37;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #b8860b;
+    padding-bottom: 5px;
+  }
+
+  .news-item p {
+    font-size: 14px;
+    color: #333;
+  }
+</style>
+</head>
+
+<!-- Przycisk powrotu -->
+  <button class="back-button" onclick="loadContent('liga1-content.html', this)">Powrót do tabeli</button>
+
+<body><div class="news-item">
+  <h2>Drabinka Turniejowa - Runda 4</h2>
+  <table>
+    <tr>
+      <th>1/4 Finału</th><th>Półfinał</th><th>Finał</th>
+    </tr>
+    <tr>
+      <td></td><td rowspan="2"></td><td rowspan="4"></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td><td rowspan="2"></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+  </table>
+
+ </div>
+
+  <div class="news-item"><center>
+    <h2>Wyniki - Runda 4</h2>
+
+<p><b> Cwiercfinaly</b> </p>
+    <p></p> 
+    <p></p>
+    <p>  </p>
+    <p>  </p>
+<p><b> Polfinaly</b> </p>
+    <p></p>
+    <p></p>
+<p><b> Final</b> </p>
+    <p></p>
+  </center></div>
+
+</body>
+
+
+</html>
