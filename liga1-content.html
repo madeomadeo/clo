@@ -40,64 +40,51 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 40px;
-      background-color: #fff8dc;
+      background-color: #ffffff;
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       text-align: center;
     }
-    .round-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .round-buttons button {
-      background-color: #d4af37;
-      border: none;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: bold;
-      color: black;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .round-buttons button:hover {
-      background-color: #b8860b;
-      color: white;
-    }
-    /* Nowe style dla przycisków R1-R8 */
-    .round-links {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  list-style-type: none;
-  padding: 20px; /* Dodałem padding dla lepszego wyglądu */
-  background-color: #fff8dc; /* Tło takie jak tabela i legenda */
-  border-radius: 12px;
-  border: 2px solid #d4af37; /* Obramowanie jak w tabeli i legendzie */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+   .round-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.round-links li {
+  display: inline-block;
+  margin: 10px;
 }
 
 .round-links a {
-  background-color: #fff8dc; /* Tło przycisków dopasowane do bloku */
-  border: 2px solid #d4af37;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: bold;
+  display: block;
+  background-color: #d4af37;
   color: black;
   text-decoration: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
   border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .round-links a:hover {
-  background-color: #d4af37; /* Złoty kolor po najechaniu */
+  background-color: #b8860b;
   color: white;
+  transform: translateY(-3px); /* Dodanie efektu unoszenia */
 }
 
+.round-links a:active {
+  background-color: #8b6f2c;
+  transform: translateY(0);
+}
+
+.round-links a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.6);
+}
     .table-section, .legend {
       width: 90%;
       margin: 20px auto;
@@ -155,7 +142,12 @@
   <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
   <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
 
-<ul class="round-links">
+  <!-- Miejsce na dynamiczną zawartość -->
+  <div id="round-content" class="table-section">
+    <p>Wybierz rundę, aby zobaczyć szczegóły.</p>
+  
+  <!-- Przyciski R1-R8 -->
+  <ul class="round-links">
     <li><a href="#" onclick="loadContent('R1.html', this)">R1</a></li>
     <li><a href="#" onclick="loadContent('R2.html', this)">R2</a></li>
     <li><a href="#" onclick="loadContent('R3.html', this)">R3</a></li>
@@ -165,41 +157,9 @@
     <li><a href="#" onclick="loadContent('R7.html', this)">R7</a></li>
     <li><a href="#" onclick="loadContent('R8.html', this)">R8</a></li>
 </ul>
-
-
-  <div id="dynamic-content">
-    <!-- Tutaj będzie dynamicznie ładowana zawartość -->
   </div>
-</div>
 
-<script>
-  // Funkcja wczytująca zawartość z pliku HTML i wstawiająca ją do #dynamic-content
-  function loadContent(page, linkElement) {
-    // Zmienia styl klikniętego linku, aby pokazać, że jest aktywny
-    let links = document.querySelectorAll('.round-links a');
-    links.forEach(link => link.style.backgroundColor = '#d4af37'); // Resetowanie koloru tła
-    linkElement.style.backgroundColor = '#b8860b'; // Zmiana koloru tła klikniętego linku
-
-    fetch(page)
-      .then(response => {
-        if (response.ok) {
-          return response.text();
-        } else {
-          throw new Error('Błąd ładowania pliku: ' + page);
-        }
-      })
-      .then(data => {
-        document.getElementById('dynamic-content').innerHTML = data;
-      })
-      .catch(error => {
-        console.error(error);
-        document.getElementById('dynamic-content').innerHTML = '<p>Wystąpił błąd podczas ładowania zawartości.</p>';
-      });
-  }
-</script>
-
-<!-- Reszta kodu tabeli i legendy -->
-<div class="table-section">
+  <div class="table-section">
     <p>Tabela ligi Najlepszej 8 Swiata</p>
     <table>
       <thead>
@@ -230,8 +190,7 @@
     </table>
   </div>
 
-<!-- Legenda -->
-<div class="legend">
+  <div class="legend">
     <h3>Legenda:</h3>
     <div class="legend-item">
       <div class="legend-color" style="background-color: #ffd700;"></div>
@@ -257,6 +216,31 @@
       <div class="legend-color" style="background-color: #b22222;"></div>
       <span>8. miejsce – Możliwy baraż o utrzymanie/spadek</span>
     </div>
+  </div>
+</div>
+
+<script>
+  function loadRound(round) {
+    const roundContent = document.getElementById('round-content');
+    roundContent.innerHTML = "Ładowanie zawartości dla " + round + "...";
+  
+    // Pełna ścieżka do plików rund na GitHubie
+    fetch(`https://madeomadeo.github.io/clo/rounds/${round}.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Nie udało się załadować danych');
+        }
+        return response.text();
+      })
+      .then(data => {
+        roundContent.innerHTML = data;
+        roundContent.style.display = "block";
+      })
+      .catch(error => {
+        roundContent.innerHTML = "<p>Nie udało się załadować danych.</p>";
+      });
+  }
+</script>
 
 </body>
 </html>
