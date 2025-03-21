@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <center>
+<center>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drabinka Turniejowa - Runda 1</title>
@@ -21,12 +21,48 @@
       background-color: #9b2226;
       color: white;
     }
+
+    /* Styl przycisku */
+    .back-button {
+      background-color: #9b2226; /* Czerwony kolor przycisku */
+      color: white; /* Kolor tekstu */
+      font-size: 16px; /* Rozmiar czcionki */
+      padding: 12px 20px; /* Wewnętrzna przestrzeń */
+      border: none; /* Bez obramowania */
+      border-radius: 8px; /* Zaokrąglone rogi */
+      cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+      text-align: center; /* Wyrównanie tekstu */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Animacje zmiany tła i przekształcenia */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień wokół przycisku */
+    }
+
+    .back-button:hover {
+      background-color: #7a1d22; /* Ciemniejszy odcień przy najechaniu */
+      transform: translateY(-3px); /* Przemieszczenie przycisku w górę podczas najechania */
+    }
+
+    .back-button:active {
+      background-color: #62121c; /* Jeszcze ciemniejszy odcień przy kliknięciu */
+      transform: translateY(1px); /* Przemieszczenie przycisku w dół przy kliknięciu */
+    }
+
+    .back-button:focus {
+      outline: none; /* Usunięcie obramowania fokusu */
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.6); /* Złoty obrys przy fokusie */
+    }
+h2 {
+      color: #FFD700; /* Złoty kolor */
+      text-align: center; /* Wyrównanie tekstu na środku */
+      font-size: 24px; /* Rozmiar czcionki */
+      font-weight: bold; /* Pogrubienie tekstu */
+      margin-top: 20px; /* Odstęp od góry */
+    }
   </style>
 </head>
 
-    <!-- Przycisk powrotu -->
-    <button class="back-button" onclick="loadContent('liga1-content.html', this)">Powrót do tabeli</button>
-</div>
+<!-- Przycisk powrotu -->
+  <button class="back-button" onclick="loadContent('liga1-content.html', this)">Powrót do tabeli</button>
+
 <body>
   <h2>Drabinka Turniejowa - Runda 1</h2>
   <table>
@@ -34,32 +70,35 @@
       <th>1/4 Finału</th><th>Półfinał</th><th>Finał</th>
     </tr>
     <tr>
-      <td>Gracz 1 vs Gracz 2</td><td rowspan="2">Zwycięzca 1</td><td rowspan="4">Zwycięzca Finału</td>
+      <td>Gracz 1 vs Gracz 2 (1:0)</td><td rowspan="2">Gracz 1 vs Gracz 4 (1:0)</td><td rowspan="4">Gracz 1 vs Gracz 5 (0:1)</td>
     </tr>
     <tr>
-      <td>Gracz 3 vs Gracz 4</td>
+      <td>Gracz 3 vs Gracz 4 (0:1)</td>
     </tr>
     <tr>
-      <td>Gracz 5 vs Gracz 6</td><td rowspan="2">Zwycięzca 2</td>
+      <td>Gracz 5 vs Gracz 6 (1:0)</td><td rowspan="2">Gracz 5 vs Gracz 7 (1:0)</td>
     </tr>
     <tr>
-      <td>Gracz 7 vs Gracz 8</td>
+      <td>Gracz 7 vs Gracz 8 (1:0)</td>
     </tr>
   </table>
 
-<div class="content">
-  <h2>Wyniki - Runda 1</h2>
+  
+
+  <div class="content">
+    <h2>Wyniki - Runda 1</h2>
     <p>Tu będą szczegóły dotyczące pierwszej rundy.</p>
-<p>Gracz 1 vs Gracz 2 (1:0)</p>
-<p>Gracz 3 vs Gracz 4 (0:1) </p>
-<p>Gracz 5 vs Gracz 6 (1:0) </p>
-<p>Gracz 7 vs Gracz 8 (1:0)</p>
 
-<p>Gracz 1 vs Gracz 4 (1:0)</p>
-<p>Gracz 5 vs Gracz 7 (1:0)</p>
+    <p>Gracz 1 vs Gracz 2 (1:0)</p> 
+    <p>Gracz 3 vs Gracz 4 (0:1)</p>
+    <p>Gracz 5 vs Gracz 6 (1:0)</p>
+    <p>Gracz 7 vs Gracz 8 (1:0)</p>
 
-<p>Gracz 1 vs Gracz 5 (0:1) </p>
-</center>
+    <p>Gracz 1 vs Gracz 4 (1:0)</p>
+    <p>Gracz 5 vs Gracz 7 (1:0)</p>
 
+    <p>Gracz 1 vs Gracz 5 (0:1)</p>
+  </div>
 </body>
+</center>
 </html>
