@@ -57,13 +57,34 @@ h2 {
       font-weight: bold; /* Pogrubienie tekstu */
       margin-top: 20px; /* Odstęp od góry */
     }
+ .news-item {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff8dc;
+      border-radius: 12px;
+      border: 2px solid #d4af37;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    .news-item h3 {
+      color: #d4af37;
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #b8860b;
+      padding-bottom: 5px;
+    }
+    .news-item p {
+      font-size: 14px;
+      color: #333;
+    }
   </style>
 </head>
 
 <!-- Przycisk powrotu -->
   <button class="back-button" onclick="loadContent('liga1-content.html', this)">Powrót do tabeli</button>
 
-<body>
+<body><div class="news-item">
   <h2>Drabinka Turniejowa - Runda 1</h2>
   <table>
     <tr>
@@ -82,23 +103,26 @@ h2 {
       <td>Gracz 7 vs Gracz 8 (1:0)</td>
     </tr>
   </table>
+</div class="news-item">
 
-  
-
+<div class="news-item"><center>
   <div class="content">
     <h2>Wyniki - Runda 1</h2>
     <p>Tu będą szczegóły dotyczące pierwszej rundy.</p>
-
+<p><b> Cwiercfinaly</b> </p>
     <p>Gracz 1 vs Gracz 2 (1:0)</p> 
     <p>Gracz 3 vs Gracz 4 (0:1)</p>
     <p>Gracz 5 vs Gracz 6 (1:0)</p>
     <p>Gracz 7 vs Gracz 8 (1:0)</p>
-
+<p><b> Polfinaly</b> </p>
     <p>Gracz 1 vs Gracz 4 (1:0)</p>
     <p>Gracz 5 vs Gracz 7 (1:0)</p>
-
+<p><b> Final</b> </p>
     <p>Gracz 1 vs Gracz 5 (0:1)</p>
   </div>
-</body>
 </center>
+</body>
+
+
+</div class="news-item">
 </html>
