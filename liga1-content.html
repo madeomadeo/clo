@@ -40,7 +40,7 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 40px;
-      background-color: #ffffff;
+      background-color: #fff8dc;
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       text-align: center;
@@ -68,31 +68,35 @@
     }
     /* Nowe style dla przycisków R1-R8 */
     .round-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      list-style-type: none;
-      padding: 0;
-    }
-    .round-links li {
-      display: inline;
-    }
-    .round-links a {
-      background-color: #d4af37;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: bold;
-      color: black;
-      text-decoration: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .round-links a:hover {
-      background-color: #b8860b;
-      color: white;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  padding: 20px; /* Dodałem padding dla lepszego wyglądu */
+  background-color: #fff8dc; /* Tło takie jak tabela i legenda */
+  border-radius: 12px;
+  border: 2px solid #d4af37; /* Obramowanie jak w tabeli i legendzie */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.round-links a {
+  background-color: #fff8dc; /* Tło przycisków dopasowane do bloku */
+  border: 2px solid #d4af37;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.round-links a:hover {
+  background-color: #d4af37; /* Złoty kolor po najechaniu */
+  color: white;
+}
 
     .table-section, .legend {
       width: 90%;
