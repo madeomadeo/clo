@@ -1,2 +1,44 @@
-<h2>Liga amatorów</h2>
+<center><h2>Liga amatorów</h2>
 <p>Witamy w Lidze amatorów! To miejsce dla tych, którzy dopiero zaczynają swoją przygodę.</p>
+<p><strong>Prace nad ligą trwają! Wkrótce ogłosimy datę otwarcia.</strong></p>
+<!-- Przycisk powrotu -->
+  <button class="back-button" onclick="loadContent('liga1-content.html', this)">Powrót do tabeli</button>
+
+</center>
+ <style>/* Styl przycisku */
+  .back-button {
+    background-color: #9b2226; /* Czerwony kolor przycisku */
+    color: white; /* Kolor tekstu */
+    font-size: 16px; /* Rozmiar czcionki */
+    padding: 12px 20px; /* Wewnętrzna przestrzeń */
+    border: none; /* Bez obramowania */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+    text-align: center; /* Wyrównanie tekstu */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animacje zmiany tła i przekształcenia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień wokół przycisku */
+    font-family: "Cinzel-Medium", serif; /* Czcionka przycisku */
+  }
+
+  .back-button:hover {
+    background-color: #7a1d22; /* Ciemniejszy odcień przy najechaniu */
+    transform: translateY(-3px); /* Przemieszczenie przycisku w górę podczas najechania */
+  }
+
+  .back-button:active {
+    background-color: #62121c; /* Jeszcze ciemniejszy odcień przy kliknięciu */
+    transform: translateY(1px); /* Przemieszczenie przycisku w dół przy kliknięciu */
+  }
+
+  .back-button:focus {
+    outline: none; /* Usunięcie obramowania fokusu */
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.6); /* Złoty obrys przy fokusie */
+  }
+ @font-face {
+      font-family: 'Cinzel-Medium';
+      src: url('fonts/Cinzel-VariableFont_wght.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+</style>
