@@ -1,227 +1,68 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Najlepsza 8 świata</title>
-  <style>
-    @font-face {
+ <style>/* Styl przycisku */
+  .back-button {
+    background-color: #9b2226; /* Czerwony kolor przycisku */
+    color: white; /* Kolor tekstu */
+    font-size: 16px; /* Rozmiar czcionki */
+    padding: 12px 20px; /* Wewnętrzna przestrzeń */
+    border: none; /* Bez obramowania */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Kursor wskazujący na możliwość kliknięcia */
+    text-align: center; /* Wyrównanie tekstu */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animacje zmiany tła i przekształcenia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Cień wokół przycisku */
+    font-family: "Cinzel-Medium", serif; /* Czcionka przycisku */
+  }
+
+  .back-button:hover {
+    background-color: #7a1d22; /* Ciemniejszy odcień przy najechaniu */
+    transform: translateY(-3px); /* Przemieszczenie przycisku w górę podczas najechania */
+  }
+
+  .back-button:active {
+    background-color: #62121c; /* Jeszcze ciemniejszy odcień przy kliknięciu */
+    transform: translateY(1px); /* Przemieszczenie przycisku w dół przy kliknięciu */
+  }
+
+  .back-button:focus {
+    outline: none; /* Usunięcie obramowania fokusu */
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.6); /* Złoty obrys przy fokusie */
+  }
+ @font-face {
       font-family: 'Cinzel-Medium';
       src: url('fonts/Cinzel-VariableFont_wght.ttf');
       font-weight: normal;
       font-style: normal;
     }
-    body {
-      font-family: 'Cinzel-Medium', serif;
-      background-color: #f4f0e4;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header, footer {
-      width: 100%;
-      background-color: #ffffff;
-      padding: 20px 0;
-      position: relative;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    footer {
-      background-color: #444;
-      color: #f2f2f2;
-      border-top: 5px solid #9b2226;
-    }
-    .banner img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-    .content {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 40px;
-      background-color: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-    .round-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .round-buttons button {
-      background-color: #d4af37;
-      border: none;
-      padding: 8px 16px;
-      font-size: 14px;
-      font-weight: bold;
-      color: black;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .round-buttons button:hover {
-      background-color: #b8860b;
-      color: white;
-    }
-    .table-section, .legend {
-      width: 90%;
+.news-item {
+      width: 80%;
       margin: 20px auto;
       padding: 20px;
       background-color: #fff8dc;
       border-radius: 12px;
       border: 2px solid #d4af37;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
     }
-    .table-section table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-    }
-    .table-section th, .table-section td {
-      padding: 8px;
-      border: 1px solid #4a4a4a;
-      text-align: center;
-    }
-    .table-section th {
-      background-color: #d4af37;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .gold { background-color: #ffd700; color: black; }
-    .silver { background-color: #c0c0c0; color: black; }
-    .bronze { background-color: #8b5a2b; color: white; }
-    .fourth { background-color: steelblue; color: white; }
-    .seventh { background-color: #e75480; color: white; }
-    .eighth { background-color: #b22222; color: white; }
-    .legend h3 {
+    .news-item h3 {
+      color: #d4af37;
       font-size: 18px;
-      color: #ffd700;
+      margin-bottom: 10px;
       border-bottom: 2px solid #b8860b;
       padding-bottom: 5px;
-      margin-bottom: 10px;
     }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+    .news-item p {
+      font-size: 14px;
+      color: #333;
     }
-    .legend-color {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
 
-<div class="content">
-  <h2 style="color: #ffd700;">Najlepsza 8 świata</h2>
-  <p>Witamy w lidze Najlepsza 8 świata. Tutaj grają najlepsi z najlepszych!</p>
+</style>
 
-  <!-- Miejsce na dynamiczną zawartość -->
-  <div id="round-content" class="table-section">
-    <p>Wybierz rundę, aby zobaczyć szczegóły.</p>
-  
-  <!-- Przyciski R1-R8 -->
-  <div class="round-buttons">
-    <button onclick="loadRound('R1')">R1</button>
-    <button onclick="loadRound('R2')">R2</button>
-    <button onclick="loadRound('R3')">R3</button>
-    <button onclick="loadRound('R4')">R4</button>
-    <button onclick="loadRound('R5')">R5</button>
-    <button onclick="loadRound('R6')">R6</button>
-    <button onclick="loadRound('R7')">R7</button>
-    <button onclick="loadRound('R8')">R8</button>
-  </div>
-  </div>
+<center><h2>Liga dla każdego</h2>
+<p><b>Witamy w Lidze dla każdego. Tutaj mozesz rywalizować z graczami o ligowe punkty i awans do elity! </b></p>
+</center><div class="news-item"><center><p><strong>Prace nad ligą trwają! Wkrótce ogłosimy datę otwarcia.</strong></p>
 
-  <div class="table-section">
-    <p>Tabela ligi Najlepszej 8 Swiata</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Pozycja</th>
-          <th>Gracz</th>
-          <th>Punkty</th>
-          <th class="small">1st</th>
-          <th class="small">2nd</th>
-          <th class="small">1/2</th>
-          <th class="small">1/4</th>
-          <th class="medium">Ilość meczów</th>
-          <th class="medium">Wygrane</th>
-          <th class="medium">Przegrane</th>
-          <th class="medium">Win Rate (%)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="gold"><td>1</td><td>Gracz 1</td><td>1200</td><td>5</td><td>1</td><td>2</td><td>4</td><td>100</td><td>75</td><td>25</td><td>75%</td></tr>
-        <tr class="silver"><td>2</td><td>Gracz 2</td><td>1100</td><td>4</td><td>2</td><td>1</td><td>3</td><td>95</td><td>66</td><td>29</td><td>70%</td></tr>
-        <tr class="bronze"><td>3</td><td>Gracz 3</td><td>1050</td><td>3</td><td>3</td><td>1</td><td>2</td><td>90</td><td>65</td><td>25</td><td>72%</td></tr>
-        <tr class="fourth"><td>4</td><td>Gracz 4</td><td>1000</td><td>2</td><td>4</td><td>0</td><td>1</td><td>85</td><td>60</td><td>25</td><td>68%</td></tr>
-        <tr><td>5</td><td>Gracz 5</td><td>950</td><td>2</td><td>2</td><td>2</td><td>0</td><td>80</td><td>55</td><td>25</td><td>65%</td></tr>
-        <tr><td>6</td><td>Gracz 6</td><td>900</td><td>1</td><td>3</td><td>1</td><td>1</td><td>75</td><td>50</td><td>25</td><td>60%</td></tr>
-        <tr class="seventh"><td>7</td><td>Gracz 7</td><td>850</td><td>1</td><td>0</td><td>3</td><td>0</td><td>70</td><td>40</td><td>30</td><td>58%</td></tr>
-        <tr class="eighth"><td>8</td><td>Gracz 8</td><td>800</td><td>0</td><td>1</td><td>0</td><td>2</td><td>65</td><td>35</td><td>30</td><td>55%</td></tr>
-      </tbody>
-    </table>
-  </div>
+ <button class="back-button" onclick="window.location.href='index.html'">Powrót do strony głównej</button>
 
-  <div class="legend">
-    <h3>Legenda:</h3>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #ffd700;"></div>
-      <span>1. miejsce – Złoto + Turniej finałowy</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #c0c0c0;"></div>
-      <span>2. miejsce – Srebro + Turniej finałowy</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #8b5a2b;"></div>
-      <span>3. miejsce – Brąz + Turniej finałowy</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: steelblue;"></div>
-      <span>4. miejsce – Turniej finałowy</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #e75480;"></div>
-      <span>7. miejsce – Baraż o utrzymanie</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color" style="background-color: #b22222;"></div>
-      <span>8. miejsce – Możliwy baraż o utrzymanie/spadek</span>
-    </div>
-  </div>
+
+</center>
 </div>
-
-<script>
-  function loadRound(round) {
-    const roundContent = document.getElementById('round-content');
-    roundContent.innerHTML = "Ładowanie zawartości dla " + round + "...";
-  
-    // Pełna ścieżka do plików rund na GitHubie
-    fetch(`https://madeomadeo.github.io/clo/rounds/${round}.html`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Nie udało się załadować danych');
-        }
-        return response.text();
-      })
-      .then(data => {
-        roundContent.innerHTML = data;
-        roundContent.style.display = "block";
-      })
-      .catch(error => {
-        roundContent.innerHTML = "<p>Nie udało się załadować danych.</p>";
-      });
-  }
-</script>
-
-</body>
-</html>
